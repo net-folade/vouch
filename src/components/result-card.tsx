@@ -66,10 +66,12 @@ export function ResultCard({
   result,
   code,
   part,
+  basePath = "/consumer",
 }: {
   result: ScanResult;
   code: string;
   part: Part | null;
+  basePath?: string;
 }) {
   const { label, blurb, icon: Icon, tone } = COPY[result];
 
@@ -131,7 +133,7 @@ export function ResultCard({
             variant={result === "genuine" ? "default" : "outline"}
             className="flex-1"
           >
-            <Link href="/consumer/scan">
+            <Link href={`${basePath}/scan`}>
               <ScanLine /> Scan another part
             </Link>
           </Button>

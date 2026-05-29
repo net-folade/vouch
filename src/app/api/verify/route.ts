@@ -50,15 +50,15 @@ export async function POST(request: Request) {
   }
 
   // Log the scan. Consumers have no geolocation in this demo, so we default
-  // to Lagos to keep the admin map populated. Best-effort: a failed insert
+  // to Accra to keep the admin map populated. Best-effort: a failed insert
   // must not break the verdict the user sees.
   await supabase.from("scans").insert({
     qr_code: code,
     result,
     scanned_by_role: role,
     mechanic_id: role === "mechanic" ? body.mechanic_id ?? null : null,
-    city: body.city ?? "Lagos",
-    country: body.country ?? "Nigeria",
+    city: body.city ?? "Accra",
+    country: body.country ?? "Ghana",
   });
 
   return NextResponse.json({ result, part: part ?? null });

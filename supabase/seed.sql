@@ -3,9 +3,9 @@
 truncate table scans, reports, parts, mechanics restart identity cascade;
 
 -- ───────────────────────── Mechanics (5) ─────────────────────────
--- Fixed UUIDs so the demo can hardcode "logged-in mechanic #1" = Chidi.
+-- Fixed UUIDs so the demo can hardcode "logged-in mechanic #1" = Malta Daniels.
 insert into mechanics (id, name, shop_name, city, country, certified, scan_count, counterfeit_finds) values
-  ('11111111-1111-1111-1111-111111111111', 'Chidi Okafor',       'AutoTrust Motors',     'Lagos',      'Nigeria', true, 142, 9),
+  ('11111111-1111-1111-1111-111111111111', 'Malta Daniels',      'AutoTrust Motors',     'Accra',      'Ghana',   true, 142, 9),
   ('22222222-2222-2222-2222-222222222222', 'Aisha Bello',        'Lekki Genuine Parts',  'Lagos',      'Nigeria', true,  87, 14),
   ('33333333-3333-3333-3333-333333333333', 'James Mwangi',       'Mwangi Auto Clinic',   'Nairobi',    'Kenya',   true,  63, 7),
   ('44444444-4444-4444-4444-444444444444', 'Kwame Mensah',       'Accra Car Care',       'Accra',      'Ghana',   true,  38, 3),
