@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { RoleSwitcher } from "@/components/role-switcher";
 
 export default function ConsumerLayout({
   children,
@@ -16,12 +17,7 @@ export default function ConsumerLayout({
               Vouch
             </span>
           </Link>
-          <Link
-            href="/"
-            className="text-sm text-muted-foreground hover:text-foreground"
-          >
-            Switch role
-          </Link>
+          <RoleSwitcher />
         </div>
       </header>
       <main className="mx-auto max-w-2xl px-6 py-8">{children}</main>

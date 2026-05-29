@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Sparkles } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -15,7 +16,7 @@ const roles = [
     title: "Consumer",
     emoji: "🚗",
     description:
-      "Scan a part before you buy. Instantly see if it's genuine — and report counterfeits.",
+      "Scan a part before you buy. Instantly see if it's genuine, and report counterfeits.",
     cta: "I'm a driver",
   },
   {
@@ -39,7 +40,12 @@ const roles = [
 export default function LandingPage() {
   return (
     <main className="min-h-screen bg-background">
-      <section className="mx-auto flex max-w-5xl flex-col items-center px-6 py-20 text-center sm:py-28">
+      <div className="flex items-center justify-center gap-2 bg-primary px-4 py-2 text-center text-sm font-medium text-primary-foreground">
+        <Sparkles className="h-4 w-4 shrink-0" />
+        Demo mode — click any role to explore, switch anytime.
+      </div>
+
+      <section className="mx-auto flex max-w-5xl flex-col items-center px-6 py-20 text-center sm:py-24">
         <div className="mb-6 flex items-center gap-3">
           <Image
             src="/vouch-logo.svg"
@@ -58,7 +64,7 @@ export default function LandingPage() {
         </h1>
         <p className="mt-5 max-w-2xl text-lg text-muted-foreground">
           Counterfeit automotive parts cost lives and money. Vouch lets drivers,
-          mechanics, and brands fight back — one scan at a time.
+          mechanics, and brands fight back. One scan at a time.
         </p>
 
         <p className="mt-10 text-sm font-medium uppercase tracking-wide text-muted-foreground">

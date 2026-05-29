@@ -12,7 +12,7 @@ export default function ConsumerHome() {
         </h1>
         <p className="text-muted-foreground">
           Scan the QR code on any part to confirm it&apos;s a genuine Stellantis
-          component — in seconds.
+          component in seconds.
         </p>
       </div>
 

@@ -68,7 +68,15 @@ export function AfricaMap({ hotspots }: { hotspots: CityHotspot[] }) {
         })}
       </ComposableMap>
 
-      <div className="mt-2 flex items-center justify-center gap-4 text-xs text-muted-foreground">
+      {hotspots.length === 0 && (
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
+          <p className="rounded-md bg-background/80 px-4 py-2 text-sm text-muted-foreground shadow-sm">
+            No counterfeit hotspots yet.
+          </p>
+        </div>
+      )}
+
+      <div className="mt-2 flex flex-wrap items-center justify-center gap-x-4 gap-y-1 text-xs text-muted-foreground">
         <Legend color={RED} label="High" />
         <Legend color={AMBER} label="Medium" />
         <Legend color={GREEN} label="Low" />
