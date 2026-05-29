@@ -42,7 +42,7 @@ export default function LandingPage() {
     <main className="min-h-screen bg-background">
       <div className="flex items-center justify-center gap-2 bg-primary px-4 py-2 text-center text-sm font-medium text-primary-foreground">
         <Sparkles className="h-4 w-4 shrink-0" />
-        Demo mode — click any role to explore, switch anytime.
+        Demo mode: click any role to explore, switch anytime.
       </div>
 
       <section className="mx-auto flex max-w-5xl flex-col items-center px-6 py-20 text-center sm:py-24">
