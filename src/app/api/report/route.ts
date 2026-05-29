@@ -1,5 +1,8 @@
 import { NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
+import type { ReportStatus } from "@/lib/types";
+
+const REPORT_STATUSES: ReportStatus[] = ["new", "investigating", "resolved"];
 
 // POST /api/report
 // Body: { seller_name, seller_location, qr_code?, price_paid?, notes?, reporter_role? }
@@ -52,4 +55,34 @@ export async function POST(request: Request) {
   }
 
   return NextResponse.json({ ok: true, id: data.id });
+}
+
+// PATCH /api/report
+// Body: { id, status }
+// Updates a report's status from the admin reports queue.
+export async function PATCH(request: Request) {
+  let body: { id?: string; status?: string };
+
+  try {
+    body = await request.json();
+  } catch {
+    return NextResponse.json({ error: "Invalid JSON body." }, { status: 400 });
+  }
+
+  const id = body.id?.trim();
+  const status = body.status as ReportStatus | undefined;
+  if (!id || !status || !REPORT_STATUSES.includes(status)) {
+    return NextResponse.json(
+      { error: "id and a valid status are required." },
+      { status: 400 }
+    );
+  }
+
+  const { error } = await supabase.from("reports").update({ status }).eq("id", id);
+
+  if (error) {
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+
+  return NextResponse.json({ ok: true });
 }
