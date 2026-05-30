@@ -3,7 +3,6 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { StatCard } from "@/components/stat-card";
 import { RecentScansFeed } from "@/components/recent-scans-feed";
 import { AfricaMap } from "@/components/africa-map";
-import { CounterfeitChart } from "@/components/counterfeit-chart";
 import { getAdminStats } from "@/lib/admin-stats";
 
 // Always fetch fresh — the dashboard reflects scans logged during the demo.
@@ -55,17 +54,6 @@ export default async function AdminDashboard() {
           <RecentScansFeed scans={stats.recentScans} />
         </div>
       </div>
-
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-base text-primary">
-            Most counterfeited part categories
-          </CardTitle>
-        </CardHeader>
-        <CardContent>
-          <CounterfeitChart data={stats.topCategories} />
-        </CardContent>
-      </Card>
     </div>
   );
 }

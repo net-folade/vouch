@@ -26,7 +26,7 @@ export function AfricaMap({ hotspots }: { hotspots: CityHotspot[] }) {
         projection="geoMercator"
         projectionConfig={{ scale: 380, center: [18, 3] }}
         height={460}
-        style={{ width: "100%", height: "auto" }}
+        style={{ width: "70%", height: "auto", margin: "0 auto" }}
       >
         <Geographies geography="/africa.geo.json">
           {({ geographies }) =>

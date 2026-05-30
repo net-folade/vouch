@@ -24,7 +24,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               </Link>
             </nav>
           </div>
-          <RoleSwitcher />
+          <div className="ml-auto">
+            <RoleSwitcher />
+          </div>
         </div>
       </header>
       <main className="mx-auto max-w-6xl px-6 py-8">{children}</main>

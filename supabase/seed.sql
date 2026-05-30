@@ -122,6 +122,37 @@ cross join lateral (
   from (select random() as rr, random() as rm) s
 ) v;
 
+-- ─────────────── Extra counterfeit hotspots ───────────────
+-- Plants a guaranteed spread of counterfeits across the continent so the
+-- brand-protection map is densely populated. `n` per city sets the bubble
+-- size / severity tier. Every city here also lives in CITY_COORDS, so each
+-- one renders as a marker.
+with hotspot_pool(city, country, n) as (
+  values
+    ('Cairo','Egypt',14), ('Johannesburg','South Africa',12),
+    ('Kano','Nigeria',11), ('Kumasi','Ghana',9),
+    ('Douala','Cameroon',8), ('Dar es Salaam','Tanzania',7),
+    ('Addis Ababa','Ethiopia',6), ('Khartoum','Sudan',5),
+    ('Tunis','Tunisia',4), ('Algiers','Algeria',3),
+    ('Kinshasa','DR Congo',3), ('Luanda','Angola',2)
+)
+insert into scans (qr_code, result, scanned_by_role, mechanic_id, city, country, created_at)
+select
+  (select qr_code from parts order by random() limit 1),
+  'counterfeit',
+  v.role,
+  case when v.role = 'mechanic' then v.mech_id end,
+  hp.city,
+  hp.country,
+  now() - (random() * interval '30 days')
+from hotspot_pool hp
+cross join generate_series(1, hp.n) g
+cross join lateral (
+  select
+    case when random() < 0.35 then 'mechanic' else 'consumer' end as role,
+    (select id from mechanics order by random() limit 1) as mech_id
+) v;
+
 -- ───────────────────────── Reports (6) ─────────────────────────
 insert into reports (qr_code, seller_name, seller_location, price_paid, notes, reporter_role, status) values
   ('CLONE-2231', 'Alaba Auto Spares',      'Alaba Market, Lagos',          4500,  'Packaging looked off, no hologram on the box.',          'consumer', 'new'),

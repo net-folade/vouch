@@ -12,6 +12,18 @@ export const CITY_COORDS: Record<string, [number, number]> = {
   Dakar: [-17.4677, 14.7167],
   Abidjan: [-4.0083, 5.3599],
   Kampala: [32.5825, 0.3476],
+  Cairo: [31.2357, 30.0444],
+  Johannesburg: [28.0473, -26.2041],
+  Kano: [8.592, 12.0022],
+  Kumasi: [-1.6244, 6.6885],
+  Douala: [9.7679, 4.0511],
+  "Dar es Salaam": [39.2083, -6.7924],
+  "Addis Ababa": [38.7578, 9.0192],
+  Khartoum: [32.5599, 15.5007],
+  Tunis: [10.1815, 36.8065],
+  Algiers: [3.0588, 36.7538],
+  Kinshasa: [15.2663, -4.4419],
+  Luanda: [13.2343, -8.839],
 };
 
 export interface CityHotspot {
