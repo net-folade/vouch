@@ -63,8 +63,8 @@ export default function LandingPage() {
           Verify genuine auto parts across Africa
         </h1>
         <p className="mt-5 max-w-2xl text-lg text-muted-foreground">
-          Counterfeit automotive parts cost lives and money. Vouch lets drivers,
-          mechanics, and brands fight back. One scan at a time.
+          Counterfeit automotive parts cost lives and money. Vouch makes it easy for drivers, mechanics, 
+          and brands to verify the authenticity of auto parts across Africa, ensuring every journey is a safe one.
         </p>
 
         <p className="mt-10 text-sm font-medium uppercase tracking-wide text-muted-foreground">
