@@ -42,7 +42,7 @@ immediately. A persistent role switcher in the top nav lets you hop between all 
 at any time.
 
 ### Suggested walkthrough
-1. Start on the landing page → enter as **Consumer**, scan a `CLONE-…` code → see the counterfeit verdict → file a report.
+1. Start on the landing page → enter as **Consumer**, scan a `CLONE-...`, `VCH-...`code → see the counterfeit verdict → file a report.
 2. Switch to **Mechanic** → scan a genuine code → watch "scans today" and the trust score reflect it.
 3. Switch to **Brand Protection** → the map, feed, and reports queue all show the activity you just generated.
 
