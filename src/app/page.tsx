@@ -14,7 +14,6 @@ const roles = [
   {
     href: "/consumer",
     title: "Consumer",
-    emoji: "🚗",
     description:
       "Scan a part before you buy. Instantly see if it's genuine, and report counterfeits.",
     cta: "I'm a driver",
@@ -22,7 +21,6 @@ const roles = [
   {
     href: "/mechanic",
     title: "Mechanic",
-    emoji: "🔧",
     description:
       "Verify parts in front of your customers and build a public trust score for your shop.",
     cta: "I'm a mechanic",
@@ -30,7 +28,6 @@ const roles = [
   {
     href: "/admin",
     title: "Brand Protection",
-    emoji: "🛡️",
     description:
       "See counterfeit hotspots across Africa in real time and act on the worst offenders.",
     cta: "I'm Stellantis",
@@ -76,10 +73,7 @@ export default function LandingPage() {
             <Link key={role.href} href={role.href} className="group">
               <Card className="h-full text-left transition-all group-hover:-translate-y-1 group-hover:border-primary group-hover:shadow-md">
                 <CardHeader>
-                  <span className="text-4xl" aria-hidden>
-                    {role.emoji}
-                  </span>
-                  <CardTitle className="mt-2 text-xl text-primary">
+                  <CardTitle className="text-xl text-primary">
                     {role.title}
                   </CardTitle>
                   <CardDescription>{role.description}</CardDescription>
