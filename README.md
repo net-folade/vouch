@@ -1,12 +1,6 @@
-<div align="center">
-  <img src="public/vouch-logo.svg" width="56" alt="Vouch logo" />
-  <h1>Vouch</h1>
-  <p><strong>Verify genuine auto parts across Africa.</strong></p>
-</div>
+<h1>Vouch</h1>
 
 ---
-
-Counterfeit automotive parts are a major safety and economic problem across Africa.
 **Vouch** is a web app that lets people verify whether a part is genuine or fake, and
 turns every scan into intelligence that brands can act on. One product, three roles
 across the automotive value chain:
@@ -48,11 +42,11 @@ at any time.
 
 ## Tech stack
 
-- **Next.js 14** (App Router) + **TypeScript**
-- **Tailwind CSS** + **shadcn/ui**
-- **Supabase** (Postgres, free tier)
+- Next.js 14 (App Router) + TypeScript
+- Tailwind CSS + shadcn/ui
+- Supabase (Postgres, free tier)
 - `html5-qrcode` (camera scanner), `react-simple-maps` (Africa map), `recharts` (charts)
-- Deploys to **Vercel**
+- Deploys to Vercel
 
 ## Project structure
 
@@ -64,40 +58,3 @@ src/
 supabase/         # schema.sql + seed.sql
 test-qr-codes/    # 30 scannable PNGs + contact sheet for demoing the scanner
 ```
-
-## Running locally
-
-```bash
-npm install
-```
-
-Create a free project at [supabase.com](https://supabase.com), then in the **SQL Editor**
-run `supabase/schema.sql` followed by `supabase/seed.sql` (5 mechanics, 30 parts, ~200
-city-weighted scans, sample reports). Re-running `seed.sql` resets the data for a fresh demo.
-
-Copy the env template and fill in your values (Supabase → **Project Settings → API**):
-
-```bash
-cp .env.example .env.local
-```
-
-```env
-NEXT_PUBLIC_SUPABASE_URL=https://your-project-ref.supabase.co
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-public-key
-```
-
-Then:
-
-```bash
-npm run dev   # http://localhost:3000
-```
-
-## Status
-
-All five build phases complete — the demo is feature-complete and deploy-ready.
-
-- [x] **Phase 1 — Foundation:** scaffold, design system, Supabase schema + seed, landing page
-- [x] **Phase 2 — Consumer flow:** camera scanner, verify result, counterfeit report form
-- [x] **Phase 3 — Mechanic flow:** dashboard, trust score, shareable certificate
-- [x] **Phase 4 — Admin dashboard:** stat cards, Africa hotspot map, scans feed, reports queue
-- [x] **Phase 5 — Polish:** persistent role switcher, demo banner, responsive, loading + empty states
